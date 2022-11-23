@@ -30,7 +30,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link><button className="btn btn-outline hover:bg-[#ff4605]">Login</button></Link>
+                    <Link to='/login'><button className="btn btn-outline hover:bg-[#ff4605]">Login</button></Link>
                 </div>
             </div>
 
