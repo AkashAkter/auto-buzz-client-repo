@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-const AudiDetails = () => {
+const Extra = () => {
     const { carName, img } = useLoaderData();
     return (
         <div className='my-20'>
@@ -16,4 +16,7 @@ const AudiDetails = () => {
     );
 };
 
-export default AudiDetails;
+export default Extra;
+
+
+

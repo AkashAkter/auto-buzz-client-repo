@@ -4,12 +4,12 @@ import About from "../../Pages/About/About";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
-import AudiDetails from "../../Pages/Items/AudiItems/AudiDetails";
 import AudiItems from "../../Pages/Items/AudiItems/AudiItems";
 import HondaItems from "../../Pages/Items/HondaItems/HondaItems";
 import MercedesItems from "../../Pages/Items/MercedesItems/MercedesItems";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import CarDetails from "../../Pages/Shared/CarDetails/CarDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/audis/:id',
-                element: <AudiDetails></AudiDetails>,
+                element: <CarDetails></CarDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/audis/${params.id}`)
             },
             {
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/hondas/:id',
-                element: <AudiDetails></AudiDetails>,
+                element: <CarDetails></CarDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/hondas/${params.id}`)
             },
             {
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/mercedess/:id',
-                element: <AudiDetails></AudiDetails>,
+                element: <CarDetails></CarDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/mercedess/${params.id}`)
             },
             {
