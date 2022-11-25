@@ -5,11 +5,11 @@ import Blogs from "../../Pages/Blogs/Blogs";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
 import AudiItems from "../../Pages/Items/AudiItems/AudiItems";
+import CarDetails from "../../Pages/Items/CarDetails/CarDetails";
 import HondaItems from "../../Pages/Items/HondaItems/HondaItems";
 import MercedesItems from "../../Pages/Items/MercedesItems/MercedesItems";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
-import CarDetails from "../../Pages/Shared/CarDetails/CarDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([

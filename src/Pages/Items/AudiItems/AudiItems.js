@@ -9,14 +9,18 @@ const AudiItems = () => {
             .then(res => res.json())
     })
     return (
-        <div>
-            {
-                cars.map(car => <Items
-                    key={car._id}
-                    car={car}
-                ></Items>)
-            }
-        </div>
+        <>
+            <div>
+                {
+                    cars.map(car => <Items
+                        key={car._id}
+                        car={car}
+                    ></Items>)
+                }
+            </div>
+
+
+        </>
     );
 };
 
