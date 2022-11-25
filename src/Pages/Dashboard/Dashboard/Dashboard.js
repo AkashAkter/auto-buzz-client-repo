@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
 import AddProduct from '../AddProduct/AddProduct';
+import AllUsers from '../AllUsers/AllUsers';
 import MyOrders from '../MyOrders/MyOrders';
 
 const Dashboard = () => {
@@ -17,11 +18,19 @@ const Dashboard = () => {
         }
     })
 
-    if (users[0]?.role === 'Buyer') {
-        return <MyOrders></MyOrders>
+    if (users[0]?.role === 'admin') {
+        return <AllUsers></AllUsers>
+
     }
     else {
-        return <AddProduct></AddProduct>
+        if (users[0]?.role === 'Buyer') {
+            return <>
+                <MyOrders></MyOrders>
+            </>
+        }
+        else {
+            return <AddProduct></AddProduct>
+        }
     }
 };
 

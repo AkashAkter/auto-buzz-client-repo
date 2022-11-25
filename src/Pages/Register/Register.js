@@ -1,15 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
+
 
     const { createUser, updateUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
 
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
+
+    if (token) {
+        navigate('/');
+    }
 
     const handleRegister = data => {
         // console.log(data);
@@ -44,10 +52,11 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Save user details', data);
-                navigate('/');
+                setCreatedUserEmail(email);
             })
     }
+
+
     return (
         <div>
             <div className="hero min-h-screen" style={{ backgroundImage: `url("https://i.ibb.co/dWS56p8/car.png")` }}>
