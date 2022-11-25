@@ -19,13 +19,31 @@ const CarDetails = () => {
         const booking = {
             name,
             email,
+            img,
+            currentPrice,
             carName,
             phone,
             address
         }
-        console.log(booking);
-        form.reset();
-        toast.success('Booking confirmed');
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                if (data.acknowledged) {
+                    toast.success('Booking confirmed');
+                    // refetch();
+                }
+                else {
+                    toast.error(data.message);
+                }
+            })
     }
 
     return (
@@ -35,9 +53,8 @@ const CarDetails = () => {
             </div>
             <h1 className='text-center text-3xl mt-8'>{carName}</h1>
             <div>
-                <button className='btn btn-outline'>Book Now</button>
 
-                <label htmlFor="booking-modal" className="btn">open modal</label>
+                <label htmlFor="booking-modal" className="btn btn-outline hover:bg-[#ff4605]">Book Now</label>
                 <input type="checkbox" id="booking-modal" className="modal-toggle" />
                 <div className="modal">
                     <div className="modal-box relative">
@@ -53,11 +70,11 @@ const CarDetails = () => {
 
                             <input name='carPrice' type="text" defaultValue={currentPrice} placeholder='Car Price' className="input input-bordered w-full " disabled />
 
-                            <input name='phone' type="tel" placeholder="Phone Number" className="input input-bordered w-full" />
+                            <input name='phone' type="tel" placeholder="Phone Number" className="input input-bordered w-full" required />
 
-                            <input name='address' type="text" placeholder="Meeting Address" className="input input-bordered w-full" />
+                            <input name='address' type="text" placeholder="Meeting Address" className="input input-bordered w-full" required />
 
-                            <input className='btn btn-accent w-full' type="submit" value="Submit" />
+                            <input className='btn btn-outline hover:bg-[#ff4605] w-full' type="submit" value="Submit" />
 
                         </form>
                     </div>

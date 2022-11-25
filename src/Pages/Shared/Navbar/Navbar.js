@@ -16,7 +16,13 @@ const Navbar = () => {
         <li className='hover:border-b-2 hover:border-[#ff4605]'><Link to='/'>Home</Link></li>
         <li className='hover:border-b-2 hover:border-[#ff4605]'><Link to='/about'>About Us</Link></li>
         <li className='hover:border-b-2 hover:border-[#ff4605]'><Link to='/blogs'>Blogs</Link></li>
-        <li className='hover:border-b-2 hover:border-[#ff4605]'><Link to='/Dashboard'>Dashboard</Link></li>
+        {
+            user?.email
+                ?
+                <li className='hover:border-b-2 hover:border-[#ff4605]'><Link to='/Dashboard'>Dashboard</Link></li>
+                : <></>
+        }
+
 
     </React.Fragment>
     return (

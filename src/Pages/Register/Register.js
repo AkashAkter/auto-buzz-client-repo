@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Register = () => {
 
     const { createUser, updateUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
+
+    const navigate = useNavigate();
 
     const handleRegister = data => {
         // console.log(data);
@@ -16,18 +18,36 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 console.log(data.role);
-                toast('Account Created')
+                toast('Account Created');
                 const userInfo = {
                     displayName: data.name
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        saveUser(data.name, data.email, data.role);
+
+                    })
                     .catch(err => console.error(err))
 
             })
             .catch(err => console.error(err))
     }
 
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Save user details', data);
+                navigate('/');
+            })
+    }
     return (
         <div>
             <div className="hero min-h-screen" style={{ backgroundImage: `url("https://i.ibb.co/dWS56p8/car.png")` }}>

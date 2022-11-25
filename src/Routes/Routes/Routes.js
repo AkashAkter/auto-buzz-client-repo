@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import About from "../../Pages/About/About";
 import Blogs from "../../Pages/Blogs/Blogs";
@@ -64,11 +65,18 @@ export const router = createBrowserRouter([
                 element: <CarDetails></CarDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/mercedess/${params.id}`)
             },
-            {
-                path: '/dashboard',
-                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-            },
 
         ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
+            }
+        ]
+
     }
 ])
