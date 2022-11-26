@@ -5,8 +5,10 @@ import SellerLink from '../../Shared/SellerLink/SellerLink';
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const AddProduct = () => {
+    useTitle('Dashboard - Add Product');
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);

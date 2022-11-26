@@ -3,9 +3,11 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
+    useTitle('Login');
     const { signIn } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
     const [loginUSerEmail, setLoginUserEmail] = useState('');

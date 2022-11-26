@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 import AllUsers from '../AllUsers/AllUsers';
 import MyOrders from '../MyOrders/MyOrders';
 import SellerDashboard from '../SellerDashboard/SellerDashboard';
 
 const Dashboard = () => {
+    useTitle('Dashboard');
 
     const { user } = useContext(AuthContext);
 

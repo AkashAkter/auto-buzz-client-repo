@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import useToken from '../../hooks/useToken';
 
 const Register = () => {
 
-
+    useTitle('Register');
     const { createUser, updateUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
 
