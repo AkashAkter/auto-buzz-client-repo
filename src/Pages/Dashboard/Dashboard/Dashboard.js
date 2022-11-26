@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
-import AddProduct from '../AddProduct/AddProduct';
 import AllUsers from '../AllUsers/AllUsers';
 import MyOrders from '../MyOrders/MyOrders';
+import SellerDashboard from '../SellerDashboard/SellerDashboard';
 
 const Dashboard = () => {
 
@@ -29,7 +29,7 @@ const Dashboard = () => {
             </>
         }
         else {
-            return <AddProduct></AddProduct>
+            return <SellerDashboard></SellerDashboard>
         }
     }
 };

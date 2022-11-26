@@ -5,7 +5,7 @@ const AllUsers = () => {
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allusers');
+            const res = await fetch(`http://localhost:5000/user?role=admin`);
             const data = await res.json();
             return data;
         }

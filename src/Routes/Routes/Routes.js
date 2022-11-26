@@ -4,6 +4,9 @@ import Main from "../../Layout/Main";
 import About from "../../Pages/About/About";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import AddProduct from "../../Pages/Dashboard/SellerDashboard/AddProduct";
+import MyBuyer from "../../Pages/Dashboard/SellerDashboard/MyBuyer";
+import MyProduct from "../../Pages/Dashboard/SellerDashboard/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
 import AudiItems from "../../Pages/Items/AudiItems/AudiItems";
 import CarDetails from "../../Pages/Items/CarDetails/CarDetails";
@@ -40,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/audis',
-                element: <AudiItems></AudiItems>
+                element: <PrivateRoute><AudiItems></AudiItems></PrivateRoute>
             },
             {
                 path: '/audis/:id',
@@ -49,7 +52,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/hondas',
-                element: <HondaItems></HondaItems>
+                element: <PrivateRoute><HondaItems></HondaItems></PrivateRoute>
             },
             {
                 path: '/hondas/:id',
@@ -58,7 +61,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/mercedes',
-                element: <MercedesItems></MercedesItems>
+                element: <PrivateRoute><MercedesItems></MercedesItems></PrivateRoute>
             },
             {
                 path: '/mercedess/:id',
@@ -75,7 +78,19 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <Dashboard></Dashboard>
-            }
+            },
+            {
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/myProduct',
+                element: <MyProduct></MyProduct>
+            },
+            {
+                path: '/dashboard/myBuyer',
+                element: <MyBuyer></MyBuyer>
+            },
         ]
 
     }
