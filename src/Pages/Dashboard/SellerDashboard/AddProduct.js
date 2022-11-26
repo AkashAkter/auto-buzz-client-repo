@@ -1,13 +1,15 @@
 
 import { useForm } from "react-hook-form";
-import React from 'react';
+import React, { useContext } from 'react';
 import SellerLink from '../../Shared/SellerLink/SellerLink';
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
 
     const handleProductAdd = data => {
         fetch(`http://localhost:5000/${data.categoryName}s`, {
@@ -119,7 +121,7 @@ const AddProduct = () => {
                                     {/* sellerName */}
                                     <div className="form-control w-full max-w-xs">
                                         <label className="label"> <span className="text-white label-text">sellerName</span></label>
-                                        <input type="text"
+                                        <input type="text" defaultValue={user?.displayName}
                                             {...register("sellerName", { required: true })}
                                             className="text-white bg-gray-600 input input-bordered w-full max-w-xs" />
                                     </div>

@@ -19,7 +19,7 @@ const Items = ({ car }) => {
                             <div className="py-6 text-xl w-80">
                                 <p>Used : {car.used}</p>
                                 <p>Posted : {car.time}</p>
-                                <p>Owner name : <span className='font-bold'>${car.sellerName}</span></p>
+                                <p>Owner name : <span className='font-bold'>{car.sellerName}</span></p>
                             </div>
 
                         </div>
