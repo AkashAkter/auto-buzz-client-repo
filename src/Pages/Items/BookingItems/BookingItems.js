@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const BookingItems = ({ nameOfCar }) => {
 
     const { user } = useContext(AuthContext);
     const { img, carName, currentPrice } = nameOfCar
-
+    const navigate = useNavigate();
     const handleBooking = event => {
         event.preventDefault();
         const form = event.target;
@@ -39,7 +40,7 @@ const BookingItems = ({ nameOfCar }) => {
                 if (data.acknowledged) {
                     toast.success('BOOKING CONFIRMED');
                     // refetch();
-                    // navigate('/Dashboard');
+                    navigate('/Dashboard');
                 }
                 else {
                     toast.error(data.message);

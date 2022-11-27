@@ -5,10 +5,10 @@ import useTitle from '../../../hooks/useTitle';
 
 const AllSellers = () => {
     useTitle('Dashboard - All users');
-    const { data: buyers = [] } = useQuery({
-        queryKey: ['buyers'],
+    const { data: sellers = [] } = useQuery({
+        queryKey: ['sellers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/user?role=Seller`);
+            const res = await fetch('http://localhost:5000/user?role=Seller');
             const data = await res.json();
             return data;
         }
@@ -29,7 +29,7 @@ const AllSellers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {buyers.map((user, i) => <tr key={i}>
+                        {sellers.map((user, i) => <tr key={i}>
                             <th>{i + 1}</th>
                             <td>{user?.name}</td>
                             <td>{user?.email}</td>

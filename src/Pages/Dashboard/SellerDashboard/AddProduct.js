@@ -67,7 +67,7 @@ const AddProduct = () => {
                                     {/* price */}
                                     <div className="form-control w-full max-w-xs">
                                         <label className="label"> <span className="text-white label-text">price</span></label>
-                                        <input type="text"
+                                        <input type="number"
                                             {...register("price", { required: true })}
                                             className="text-white bg-gray-600 input input-bordered w-full max-w-xs" />
                                     </div>
