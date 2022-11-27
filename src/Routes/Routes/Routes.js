@@ -4,6 +4,7 @@ import Main from "../../Layout/Main";
 import About from "../../Pages/About/About";
 import Blogs from "../../Pages/Blogs/Blogs";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 import AddProduct from "../../Pages/Dashboard/SellerDashboard/AddProduct";
 import MyBuyer from "../../Pages/Dashboard/SellerDashboard/MyBuyer";
 import MyProduct from "../../Pages/Dashboard/SellerDashboard/MyProduct";
@@ -14,12 +15,14 @@ import HondaItems from "../../Pages/Items/HondaItems/HondaItems";
 import MercedesItems from "../../Pages/Items/MercedesItems/MercedesItems";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -74,6 +77,7 @@ export const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard',
@@ -90,6 +94,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/myBuyer',
                 element: <MyBuyer></MyBuyer>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
 
