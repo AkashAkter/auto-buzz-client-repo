@@ -25,13 +25,12 @@ const Dashboard = () => {
 
     }
     else {
-        if (users[0]?.role === 'Buyer') {
-            return <>
-                <MyOrders></MyOrders>
-            </>
+        if (users[0]?.role === 'Seller') {
+            return <SellerDashboard></SellerDashboard>
+
         }
         else {
-            return <SellerDashboard></SellerDashboard>
+            return <MyOrders></MyOrders>
         }
     }
 };

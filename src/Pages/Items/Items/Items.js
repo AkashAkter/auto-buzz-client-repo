@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 
-const Items = ({ car }) => {
+const Items = ({ car, setCarName }) => {
 
     useTitle('Used Cars');
+    // console.log(car);
     return (
 
         <>
@@ -28,7 +29,14 @@ const Items = ({ car }) => {
                         </div>
                         <div className='flex justify-between'>
                             <div>
-
+                                {/* <BookingItems
+                                    car={car}
+                                ></BookingItems> */}
+                                <label
+                                    htmlFor="booking-modal"
+                                    className="btn btn-outline hover:bg-[#ff4605]"
+                                    onClick={() => setCarName(car)}
+                                >Book Now</label>
                             </div>
 
                             <div>

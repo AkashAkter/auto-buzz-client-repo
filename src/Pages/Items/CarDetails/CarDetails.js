@@ -57,7 +57,6 @@ const CarDetails = () => {
             </div>
             <h1 className='text-center text-3xl mt-8'>{carName}</h1>
             <div>
-
                 <label htmlFor="booking-modal" className="btn btn-outline hover:bg-[#ff4605]">Book Now</label>
                 <input type="checkbox" id="booking-modal" className="modal-toggle" />
                 <div className="modal">

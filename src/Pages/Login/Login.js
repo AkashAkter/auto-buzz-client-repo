@@ -1,4 +1,5 @@
 
+import { GoogleAuthProvider } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -8,12 +9,14 @@ import useToken from '../../hooks/useToken';
 
 const Login = () => {
     useTitle('Login');
-    const { signIn } = useContext(AuthContext);
+    const { signIn, providerLogin } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
     const [loginUSerEmail, setLoginUserEmail] = useState('');
     const [token] = useToken(loginUSerEmail);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const googleProvider = new GoogleAuthProvider();
 
     const from = location.state?.from?.pathname || '/';
 
@@ -30,6 +33,33 @@ const Login = () => {
             })
             .catch(err => console.error(err))
 
+    }
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(res => {
+                const name = res.user.displayName;
+                const email = res.user.email;
+                const role = 'Buyer';
+                console.log(res.user.email)
+                saveUser(name, email, role);
+            })
+            .catch(e => console.error(e))
+    }
+
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setLoginUserEmail(email);
+            })
     }
 
     return (
@@ -60,7 +90,7 @@ const Login = () => {
                             </form>
                             <p>New in Auto Buzz <Link className='text-[#ff4605]' to="/register">Create new Account</Link></p>
                             <div className="divider">OR</div>
-                            <button className='btn btn-outline hover:bg-[#ff4605] text-white w-full'>CONTINUE WITH GOOGLE</button>
+                            <button onClick={handleGoogleSignIn} className='btn btn-outline hover:bg-[#ff4605] text-white w-full'>CONTINUE WITH GOOGLE</button>
                         </div>
                     </div>
                 </div>
