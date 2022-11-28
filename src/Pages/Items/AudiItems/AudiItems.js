@@ -6,6 +6,7 @@ import Items from '../Items/Items';
 
 const AudiItems = () => {
 
+    const { user } = useContext(AuthContext);
     const [nameOfCar, setCarName] = useState(null);
 
     const { data: cars = [] } = useQuery({
@@ -13,8 +14,7 @@ const AudiItems = () => {
         queryFn: () => fetch('http://localhost:5000/audis')
             .then(res => res.json())
     });
-
-    const { user } = useContext(AuthContext);
+    ;
 
     const { data: users = {} } = useQuery({
         queryKey: ['users', user?.email],
@@ -23,8 +23,9 @@ const AudiItems = () => {
             const data = await res.json();
             return data;
         }
-    })
+    });
 
+    const role = users[0]?.role;
 
     return (
         <>
@@ -35,7 +36,7 @@ const AudiItems = () => {
                         key={car._id}
                         car={car}
                         setCarName={setCarName}
-                        users={users}
+                        users={role}
                     ></Items>)
                 }
             </div>

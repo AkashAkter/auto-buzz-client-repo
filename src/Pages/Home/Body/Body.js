@@ -79,11 +79,8 @@ const Body = () => {
                 </div>
             </section>
 
-            <section className='bg-black h-60 my-32'>
 
-            </section>
-
-            <section className='lg:mx-40 md:mx-20 mx-8'>
+            <section className='lg:mx-40 md:mx-20 mx-8 mt-40'>
                 <div className='text-center my-8'>
                     <h1 className='text-4xl font-extrabold'>Control Your Car-Buying Experience</h1>
                     <p>At TrueCar, you're in charge of the process from start to finish. Here's how.                    </p>
