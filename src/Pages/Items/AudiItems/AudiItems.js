@@ -29,8 +29,7 @@ const AudiItems = () => {
 
     return (
         <>
-            <div>
-
+            <div className='border p-20'>
                 {
                     cars.map(car => <Items
                         key={car._id}

@@ -7,8 +7,10 @@ const MyBuyer = () => {
     return (
         <div>
             <SellerLink></SellerLink>
-            <div>
-                My buyer
+            <div className='mt-10 mb-[400px]'>
+                <div className='bg-slate-400 p-4 uppercase text-center text-5xl'>
+                    My buyer
+                </div>
             </div>
         </div>
     );

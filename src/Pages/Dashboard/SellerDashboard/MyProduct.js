@@ -33,10 +33,10 @@ const MyProduct = () => {
     return (
         <div>
             <SellerLink></SellerLink>
-            <div className='mb-[500px]'>
-                <h3 className="text-3xl text-center">My Orders</h3>
+            <div className='mb-[400px] border mt-12'>
+                <h3 className="text-3xl font-extrabold text-center uppercase py-4 bg-slate-400">My Orders</h3>
 
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto border">
                     <table className="table w-full">
 
                         <thead>

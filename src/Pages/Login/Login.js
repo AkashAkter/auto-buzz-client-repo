@@ -68,7 +68,7 @@ const Login = () => {
                 <div className="hero-overlay"></div>
                 <div className="hero-content text-center text-neutral-content ">
                     <div className='h-[800px] flex justify-center items-center'>
-                        <div className='w-96 p-7 border-2'>
+                        <div className='w-96 p-7 border  shadow-2xl shadow-indigo-900'>
                             <h2 className='text-2xl text-white text-center'>Login</h2>
                             <form onSubmit={handleSubmit(handleLogin)}>
 

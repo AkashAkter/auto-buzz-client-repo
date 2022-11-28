@@ -32,7 +32,7 @@ const AddProduct = () => {
             <SellerLink></SellerLink>
             <div className="hero min-h-screen mb-20" style={{ backgroundImage: `url("https://r4.wallpaperflare.com/wallpaper/590/199/595/dark-car-vehicle-nissan-wallpaper-c9f85c6066e1bf841be2db1e2c4329bc.jpg")` }}>
                 <div className="hero-overlay"></div>
-                <div className="hero-content text-center text-neutral-content ">
+                <div className="hero-content text-center text-neutral-content">
                     <div className='h-full flex justify-center items-center'>
                         <div className=' shadow-2xl shadow-blue-900'>
                             <h2 className='text-2xl text-white text-center'>Add New Product</h2>

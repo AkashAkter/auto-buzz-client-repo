@@ -26,7 +26,7 @@ const MercedesItems = () => {
 
     return (
         <>
-            <div>
+            <div className='border p-20'>
 
                 {
                     cars.map(car => <Items

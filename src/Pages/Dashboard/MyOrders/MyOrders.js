@@ -23,15 +23,15 @@ const MyOrders = () => {
     })
 
     return (
-        <div className='mb-[500px]'>
-            <h3 className="text-3xl text-center">My Orders</h3>
+        <div className='mb-[500px] mt-10'>
+            <h3 className="text-4xl text-center banner-title">My Orders</h3>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto border mt-12">
                 <table className="table w-full">
 
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Sl No</th>
                             <th>Image</th>
                             <th>Title</th>
                             <th>Price</th>
