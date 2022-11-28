@@ -28,7 +28,7 @@ const Login = () => {
         signIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 setLoginUserEmail(data.email);
             })
             .catch(err => console.error(err))
@@ -41,7 +41,7 @@ const Login = () => {
                 const name = res.user.displayName;
                 const email = res.user.email;
                 const role = 'Buyer';
-                console.log(res.user.email)
+                // console.log(res.user.email);
                 saveUser(name, email, role);
             })
             .catch(e => console.error(e))

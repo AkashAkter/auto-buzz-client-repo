@@ -25,8 +25,8 @@ const Register = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                console.log(data.role);
+                // console.log(user);
+                // console.log(data.role);
                 toast('Account Created');
                 const userInfo = {
                     displayName: data.name

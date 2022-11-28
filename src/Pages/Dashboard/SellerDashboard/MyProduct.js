@@ -27,10 +27,8 @@ const MyProduct = () => {
             .then(res => res.json())
     });
 
-    console.log(myCars1, myCars2, myCars3);
-
     const merged = [...myCars1, ...myCars2, ...myCars3];
-    console.log(merged)
+
 
     return (
         <div>

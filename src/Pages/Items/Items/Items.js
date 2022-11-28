@@ -6,13 +6,6 @@ const Items = ({ car, setCarName }) => {
 
     useTitle('Used Cars');
 
-    // console.log(booked);
-    // if (booked[2]?.paid === true) {
-    //     console.log('hi');
-    // }
-    // else {
-    //     console.log('Hello');
-    // }
     return (
 
         <>
