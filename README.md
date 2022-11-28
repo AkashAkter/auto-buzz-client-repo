@@ -1,15 +1,19 @@
 # A website related to sell used cars
 
 ## I have done this work in this project
-* Makes a react project for Client site
-* makes a server site project where I have created some course details
-* installed react-router firebase
-* used tailwind framework (Daisy Ui)
-* taken react icons
-* created firebase 
-* Login, Register section created
+* Makes a full stack project.
+* Seller can add their used cars and sold them vai this site.
+* Customers can come and book their appointment with sellers.
+* Both customers and sellers have to create an account for buying or selling any car.
 
-# Live Site Link : 
+## Technology used
+* ReactJS, NodeJS, UseQuery, Express, cors
+* DaisyUI, tailwind CSS, 
+* Goggle authentication, MongoDB
+* Stripe for payment
+* Vercel for server deploy
+
+# Live Site Link : https://auto-buzz-28ba2.web.app/
 
 ## Main Requirements
 * Your homepage will have a navbar , a banner/slider, Advertised items, second-hand product categories section and a realistic footer.
