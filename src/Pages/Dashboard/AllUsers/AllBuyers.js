@@ -14,6 +14,23 @@ const AllBuyers = () => {
         }
     });
 
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        if (proceed) {
+            fetch(`http://localhost:5000/allUsers/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+
+                    }
+                })
+        }
+    }
+
 
     return (
         <div className='border my-20'>
@@ -34,7 +51,9 @@ const AllBuyers = () => {
                             <td>{user?.name}</td>
                             <td>{user?.email}</td>
                             <td>{user?.role}</td>
-                            <td><button className='btn btn-outline'>Delete</button></td>
+                            <td><button
+                                onClick={() => handleDelete(user?._id)}
+                                className='btn btn-outline'>Delete</button></td>
 
                         </tr>)}
                     </tbody>

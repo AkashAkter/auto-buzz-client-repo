@@ -16,6 +16,7 @@ import MercedesItems from "../../Pages/Items/MercedesItems/MercedesItems";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
+import WrongRoute from "../../Pages/WrongRoute/WrongRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -101,6 +102,9 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
-
+    },
+    {
+        path: '*',
+        element: <WrongRoute></WrongRoute>
     }
 ])

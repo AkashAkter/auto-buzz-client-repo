@@ -5,7 +5,14 @@ import useTitle from '../../../hooks/useTitle';
 const Items = ({ car, setCarName }) => {
 
     useTitle('Used Cars');
-    // console.log(car);
+
+    // console.log(booked);
+    // if (booked[2]?.paid === true) {
+    //     console.log('hi');
+    // }
+    // else {
+    //     console.log('Hello');
+    // }
     return (
 
         <>
@@ -29,9 +36,7 @@ const Items = ({ car, setCarName }) => {
                         </div>
                         <div className='flex justify-between'>
                             <div>
-                                {/* <BookingItems
-                                    car={car}
-                                ></BookingItems> */}
+
                                 <label
                                     htmlFor="booking-modal"
                                     className="btn btn-outline hover:bg-[#ff4605]"
