@@ -14,7 +14,7 @@ const AddProduct = () => {
     const { user } = useContext(AuthContext);
 
     const handleProductAdd = data => {
-        fetch(`http://localhost:5000/${data.categoryName}s`, {
+        fetch(`https://auto-buzz-server-site.vercel.app/${data.categoryName}s`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

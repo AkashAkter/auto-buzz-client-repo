@@ -11,19 +11,19 @@ const MyProduct = () => {
 
     const { data: myCars1 = [] } = useQuery({
         queryKey: ['myCars1'],
-        queryFn: () => fetch(`http://localhost:5000/myMercedess?sellerName=${user.displayName}`)
+        queryFn: () => fetch(`https://auto-buzz-server-site.vercel.app/myMercedess?sellerName=${user.displayName}`)
             .then(res => res.json())
     });
 
     const { data: myCars2 = [] } = useQuery({
         queryKey: ['myCars2'],
-        queryFn: () => fetch(`http://localhost:5000/myAudi?sellerName=${user.displayName}`)
+        queryFn: () => fetch(`https://auto-buzz-server-site.vercel.app/myAudi?sellerName=${user.displayName}`)
             .then(res => res.json())
     });
 
     const { data: myCars3 = [] } = useQuery({
         queryKey: ['myCars3'],
-        queryFn: () => fetch(`http://localhost:5000/myHonda?sellerName=${user.displayName}`)
+        queryFn: () => fetch(`https://auto-buzz-server-site.vercel.app/myHonda?sellerName=${user.displayName}`)
             .then(res => res.json())
     });
 
@@ -34,7 +34,7 @@ const MyProduct = () => {
         <div>
             <SellerLink></SellerLink>
             <div className='mb-[400px] border mt-12'>
-                <h3 className="text-3xl font-extrabold text-center uppercase py-4 bg-slate-400">My Orders</h3>
+                <h3 className="text-3xl font-extrabold text-center uppercase py-4 bg-slate-400">My Products</h3>
 
                 <div className="overflow-x-auto border">
                     <table className="table w-full">

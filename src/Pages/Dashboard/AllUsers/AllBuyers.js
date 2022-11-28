@@ -8,7 +8,7 @@ const AllBuyers = () => {
     const { data: buyers = [] } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/user?role=Buyer`);
+            const res = await fetch(`https://auto-buzz-server-site.vercel.app/user?role=Buyer`);
             const data = await res.json();
             return data;
         }
@@ -17,7 +17,7 @@ const AllBuyers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete this account?');
         if (proceed) {
-            fetch(`http://localhost:5000/allUsers/${id}`, {
+            fetch(`https://auto-buzz-server-site.vercel.app/allUsers/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

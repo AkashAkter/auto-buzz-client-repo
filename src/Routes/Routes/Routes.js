@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
             {
                 path: '/audis/:id',
                 element: <CarDetails></CarDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/audis/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-buzz-server-site.vercel.app/audis/${params.id}`)
             },
             {
                 path: '/hondas',
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
             {
                 path: '/hondas/:id',
                 element: <CarDetails></CarDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/hondas/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-buzz-server-site.vercel.app/hondas/${params.id}`)
             },
             {
                 path: '/mercedes',
@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
             {
                 path: '/mercedess/:id',
                 element: <CarDetails></CarDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/mercedess/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-buzz-server-site.vercel.app/mercedess/${params.id}`)
             },
 
         ]
@@ -99,7 +99,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader: ({ params }) => fetch(`https://auto-buzz-server-site.vercel.app/bookings/${params.id}`)
             },
         ]
     },
