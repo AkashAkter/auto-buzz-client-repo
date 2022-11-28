@@ -15,7 +15,7 @@ const AllBuyers = () => {
     });
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        const proceed = window.confirm('Are you sure, you want to delete this account?');
         if (proceed) {
             fetch(`http://localhost:5000/allUsers/${id}`, {
                 method: 'DELETE'
