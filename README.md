@@ -83,6 +83,6 @@
 
 * Database collection names, routes, mongdb features/operators when needed, api naming convension and best practices.
 
-adminEmail: <your admin email>
+adminEmail: <admin@autobuzz.com>
 
-adminPassword: <your admin password>
+adminPassword: <123456>
